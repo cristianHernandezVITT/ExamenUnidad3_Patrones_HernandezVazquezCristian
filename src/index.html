@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Sistema de Tareas - Decorator y Flyweight</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="barra">
+		<h1>Sistema de Tareas (Decorator & Flyweight)</h1>
+		<div class="controles">
+			<button id="anterior">&lt;</button>
+			<div id="mesAnyo" class="mes-anyo"></div>
+			<button id="siguiente">&gt;</button>
+		</div>
+	</header>
+
+	<main class="principal">
+		<section class="calendario-wrap">
+			<table id="calendario" class="calendario" aria-label="Calendario del mes">
+				<thead>
+					<tr id="diasSemana"></tr>
+				</thead>
+				<tbody id="cuerpoCalendario"></tbody>
+			</table>
+		</section>
+
+		<aside id="panel" class="panel oculto" aria-hidden="true">
+			<h2 id="fechaSeleccionada">Día</h2>
+			<div id="listaTareas"></div>
+
+			<form id="formTarea" class="form">
+				<h3 id="formTitulo">Crear tarea</h3>
+						<label>Título
+							<input id="titulo" required />
+						</label>
+				<label>Descripción
+					<textarea id="descripcion"></textarea>
+				</label>
+						<label>Hora
+							<input id="hora" type="time" required />
+						</label>
+				<label>Prioridad
+					<select id="prioridad">
+						<option value="baja">Baja</option>
+						<option value="media">Media</option>
+						<option value="alta">Alta</option>
+					</select>
+				</label>
+				<div class="botones-form">
+					<button type="submit" id="guardar">Guardar</button>
+					<button type="button" id="cancelar">Cancelar</button>
+				</div>
+			</form>
+					<div class="herramientas">
+						<h4>Acciones rápidas</h4>
+						<div class="botones-rapidos">
+							<button id="btnResaltar">Resaltar (rojo)</button>
+							<button id="btnTachar">Tachar</button>
+							<button id="btnAplazar">Aplazar +1 día</button>
+							<button id="btnPrioridadAlta">Marcar prioridad alta</button>
+						</div>
+					</div>
+		</aside>
+	</main>
+
+	<footer class="pie">Implementación didáctica: Decorator + Flyweight — variables en español</footer>
+
+	<script type="module" src="main.js"></script>
+</body>
+</html>
+
